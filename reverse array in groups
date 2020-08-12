@@ -1,0 +1,37 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		//code
+	Scanner s=new Scanner(System.in);
+		int t=s.nextInt();
+		while(t-- > 0){
+		    int n=s.nextInt();
+		    int k=s.nextInt();
+		    int[] arr=new int[n];
+		    for(int i=0;i<n;i++){
+		        arr[i]=s.nextInt();
+		    }
+		    int m=n/k;
+		    int rem=n%k;
+		    int c=k-1;
+		    int d=0;
+		    StringBuffer sb=new StringBuffer();
+		    while(m-- > 0){
+		        for(int i=c;i>=d;i--)
+		        sb.append(arr[i]+" ");
+		        c+=k;
+		        d+=k;
+		    }
+		    if(rem !=0){
+		        int index=n-rem;
+		        for(int i=n-1;i>=index;i--)
+		        sb.append(arr[i]+" ");
+		    }
+		    System.out.println(sb);
+		}
+	}
+}
